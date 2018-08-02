@@ -28,6 +28,7 @@ var apos = require('apostrophe')({
           name: 'home',
           label: 'Home'
         },
+        
       ]
     },
     // If a template is not found somewhere else, serve it from the top-level
