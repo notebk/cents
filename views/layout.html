@@ -19,11 +19,32 @@
   #}
 {% endblock %}
 
+
+
 {% block beforeMain %}
-  {#
-    We recommend you use the beforeMain block for global page components
-    like headers or navigation.
-  #}
+
+    <ul class="top-bar no-bullet">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Cada Centavo</li>
+      {% for tab in data.home._children %}
+        <li class="tab {{ 'active' if tab.slug == data.page.slug }}">
+
+          <a href="{{ tab._url }}">{{ tab.title }}</a>
+        </li>
+      {% endfor %}
+        </li>
+      </ul> 
+    </ul>
+    
+    {% macro breadcrumb(page) %}
+      <li class="breadcrumb"><a href="{{ page._url }}">{{ page.title }}</a></li>
+    {% endmacro %}
+    <ul class="breadcrumbs">
+      {% for ancestor in data.page._ancestors %}
+        {{ breadcrumb(ancestor) }}
+        {{ breadcrumb(data.page) }}
+      {% endfor %}
+    </ul>
 {% endblock %}
 
 {% block main %}
