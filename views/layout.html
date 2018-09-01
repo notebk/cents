@@ -17,25 +17,34 @@
     This block outputs its contents in the HTML document's <head>.
     It is a good place to put extra <script> <link> and <meta> tags.
   #}
+  <!-- jQuery must be imported before Foundation -->
+<script src="js/foundation/vendor/jquery.js"></script>
+<!-- this will include every plugin and utility required by Foundation -->
+<script src="js/foundation/vendor/foundation.js"></script>
+<!-- this will include every plugin and utility required by Foundation -->
+<script src="js/foundation/app.js"></script>
 {% endblock %}
 
 
 
 {% block beforeMain %}
 <!-- mobile nav bar -->
-<div class="title-bar topbar-center-logo-mobile hide-for-medium" data-responsive-toggle="topbar-center-logo">
+<div class="title-bar topbar-left-logo-mobile hide-for-medium" data-responsive-toggle="topbar-left-logo">
   <div class="title-bar-left">
     <div class="title-bar-title"><img src="https://placehold.it/100x39" alt="" /></div>
   </div>
   <div class="title-bar-right">
-    <button class="menu-icon" type="button" data-toggle="topbar-center-logo"></button>
+    <button class="menu-icon" type="button" data-toggle="topbar-left-logo"></button>
   </div>
 </div>
 <!-- /mobile nav bar -->
 
 <!-- medium and larger nav bar -->
-<div class="top-bar topbar-center-logo" id="topbar-center-logo">
+<div class="top-bar topbar-left-logo hide-for-small" id="topbar-left-logo">
   <div class="top-bar-left">
+    <a href="#"><img src="https://placehold.it/100x39" alt="" /></a>
+  </div>
+  <div class="top-bar-right">
     <ul class="menu vertical medium-horizontal">
       {% for tab in data.home._children %}
         <li class="tab {{ 'active' if tab.slug == data.page.slug }}">
@@ -45,16 +54,7 @@
       {% endfor %}
     </ul>
   </div>
-  <div class="top-bar-center">
-    <a href="#"><img src="https://placehold.it/100x39" alt="" /></a>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu vertical medium-horizontal">
-      <li><a href="#">Four</a></li>
-      <li><a href="#">Five</a></li>
-      <li><a href="#">Six</a></li>
-    </ul>
-  </div>
+
 </div>
 <!-- /medium and larger nav bar -->
 
@@ -97,4 +97,5 @@
   {#
     This would be a great place to put a global footer.
   #}
+
 {% endblock %}

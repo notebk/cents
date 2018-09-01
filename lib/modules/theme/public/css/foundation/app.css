@@ -6,35 +6,35 @@
 .apos-refreshable {
   background: none;
 }
-.topbar-center-logo {
+.topbar-left-logo {
   background: #2c3840;
 }
 
-.topbar-center-logo .menu {
+.topbar-left-logo .menu {
   background: #2c3840;
 }
 
-.topbar-center-logo .menu a {
+.topbar-left-logo .menu a {
   color: #fefefe;
 }
 
-.topbar-center-logo .top-bar-center {
+.topbar-left-logo .top-bar-left {
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
 }
 
 @media screen and (max-width: 39.9375em) {
-  .topbar-center-logo .top-bar-center {
+  .topbar-left-logo .top-bar-left {
     display: none;
   }
 }
 
-.topbar-center-logo-mobile {
+.topbar-left-logo-mobile {
   background: #2c3840;
 }
 
-.topbar-center-logo-mobile .menu-icon {
+.topbar-left-logo-mobile .menu-icon {
   vertical-align: text-top;
 }
 
