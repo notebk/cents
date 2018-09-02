@@ -36,7 +36,7 @@ var apos = require('apostrophe')({
     // People who specialize in various products
     'specialists': {},
     'specialists-pages': {},
-    'theme': {},
+    //'theme': {},
     'test-widgets': {},
     'apostrophe-global': {
       addFields: [

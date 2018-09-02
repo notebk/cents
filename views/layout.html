@@ -17,11 +17,13 @@
     This block outputs its contents in the HTML document's <head>.
     It is a good place to put extra <script> <link> and <meta> tags.
   #}
+
 {% endblock %}
 
 
 
 {% block beforeMain %}
+
 <!-- mobile nav bar -->
 <div class="title-bar topbar-center-logo-mobile" data-responsive-toggle="topbar-center-logo" data-hide-for="medium">
   <div class="title-bar-left">
@@ -88,6 +90,9 @@
 {% endblock %}
 
 {% block afterMain %}
+<script type="text/javascript">
+  $(document).foundation();
+</script>
   {#
     This would be a great place to put a global footer.
   #}
