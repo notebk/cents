@@ -17,68 +17,23 @@
     This block outputs its contents in the HTML document's <head>.
     It is a good place to put extra <script> <link> and <meta> tags.
   #}
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
 
 
 
 {% block beforeMain %}
 
-<!-- mobile nav bar -->
-<div class="title-bar topbar-center-logo-mobile" data-responsive-toggle="topbar-center-logo" data-hide-for="medium">
-  <div class="title-bar-left">
-    <div class="title-bar-title"><img src="https://placehold.it/100x39" alt="" /></div>
-  </div>
-  <div class="title-bar-right">
-    <button class="menu-icon" type="button" data-toggle="topbar-left-logo"></button>
-  </div>
-</div>
-<!-- /mobile nav bar -->
+  <nav class="teal lighten-3"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </nav>
 
-<!-- medium and larger nav bar -->
-<div class="top-bar topbar-left-logo hide-for-small" id="topbar-left-logo">
-  <div class="top-bar-left">
-    <a href="#"><img src="https://placehold.it/100x39" alt="" /></a>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu vertical medium-horizontal">
-      {% for tab in data.home._children %}
-        <li class="tab {{ 'active' if tab.slug == data.page.slug }}">
+  <ul id="slide-out" class="sidenav">
+    <li><a class="waves-effect" href="/"><i class="material-icons">copyright</i>Cada Centavo</a></li>
+    <li><a class="waves-effect" href="/specialists"><i class="material-icons">cloud</i>Specialists</a></li>
+    <li><a class="waves-effect" href="/products"><i class="material-icons">cloud</i>Products</a></li>
+  </ul>
+  
 
-          <a href="{{ tab._url }}">{{ tab.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-
-</div>
-<!-- /medium and larger nav bar -->
-
-<!--
-    <ul class="top-bar no-bullet">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">Cada Centavo</li>
-      {% for tab in data.home._children %}
-        <li class="tab {{ 'active' if tab.slug == data.page.slug }}">
-
-          <a href="{{ tab._url }}">{{ tab.title }}</a>
-        </li>
-      {% endfor %}
-        </li>
-      </ul> 
-    </ul>
-
--->
-    
-    {% macro breadcrumb(page) %}
-      <li class="breadcrumb"><a href="{{ page._url }}">{{ page.title }}</a></li>
-    {% endmacro %}
-    <ul class="breadcrumbs">
-      {% for ancestor in data.page._ancestors %}
-        {{ breadcrumb(ancestor) }}
-        {{ breadcrumb(data.page) }}
-      {% endfor %}
-    </ul>
 {% endblock %}
 
 {% block main %}
@@ -90,9 +45,7 @@
 {% endblock %}
 
 {% block afterMain %}
-<script type="text/javascript">
-  $(document).foundation();
-</script>
+
   {#
     This would be a great place to put a global footer.
   #}
