@@ -24,7 +24,14 @@
 
 {% block beforeMain %}
 
-  <nav class="teal lighten-3"><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <nav class="teal lighten-3">
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+    <li><a href="/">Cada Centavo</a></li>
+    <li><a href="/specialists">Specialists</a></li>
+    <li><a href="/products">Products</a></li>
+  </ul>
+
   </nav>
 
   <ul id="slide-out" class="sidenav">
@@ -33,6 +40,7 @@
     <li><a class="waves-effect" href="/products"><i class="material-icons">cloud</i>Products</a></li>
   </ul>
   
+  <!-- DESKTOP MENU -->
 
 {% endblock %}
 
